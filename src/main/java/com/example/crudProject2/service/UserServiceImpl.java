@@ -2,7 +2,7 @@ package com.example.crudProject2.service;
 
 
 import com.example.crudProject2.model.User;
-import com.example.crudProject2.repository.UserDao;
+import com.example.crudProject2.dao.UserDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

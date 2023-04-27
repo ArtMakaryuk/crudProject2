@@ -1,4 +1,4 @@
-package com.example.crudProject2.repository;
+package com.example.crudProject2.dao;
 
 
 

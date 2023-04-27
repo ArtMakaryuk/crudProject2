@@ -1,4 +1,4 @@
-package com.example.crudProject2.repository;
+package com.example.crudProject2.dao;
 
 import com.example.crudProject2.model.User;
 import org.springframework.stereotype.Repository;
