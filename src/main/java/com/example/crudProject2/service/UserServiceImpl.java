@@ -2,37 +2,49 @@ package com.example.crudProject2.service;
 
 
 import com.example.crudProject2.model.User;
-import com.example.crudProject2.repository.UserRepository;
+import com.example.crudProject2.repository.UserDao;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
 
-    private final UserRepository userRepository;
+    private final UserDao userDao;
 
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
     }
+
+    @Transactional
     @Override
     public User findById(Long id) {
-        return userRepository.findById(id).orElseThrow();
+        return userDao.findById(id);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<User> findAll() {
-        return userRepository.findAll();
+        return userDao.findAll();
     }
 
+    @Transactional
     @Override
     public void saveUser(User user) {
-        userRepository.save(user);
+        userDao.saveUser(user);
     }
 
+    @Transactional
     @Override
     public void deleteById(Long id) {
-        userRepository.deleteById(id);
+        userDao.deleteById(id);
+    }
+
+    @Transactional
+    @Override
+    public void editUser(User user) {
+        userDao.editUser(user);
     }
 
 
