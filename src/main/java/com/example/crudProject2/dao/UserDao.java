@@ -1,7 +1,5 @@
 package com.example.crudProject2.dao;
 
-
-
 import com.example.crudProject2.model.User;
 
 import java.util.List;
